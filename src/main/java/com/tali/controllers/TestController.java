@@ -1,16 +1,23 @@
 package com.tali.controllers;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.tali.entities.TestEntity;
+import com.tali.repositories.ITestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/test")
+@RequestMapping("/tests")
 public class TestController {
 
+    @Autowired
+    private ITestRepository testRepository;
+
     @PostMapping
-    public int createTest(@RequestBody int id) {
-        return id;
+    public void createTest(@RequestBody TestEntity testEntity) {
+        testRepository.save(testEntity);
+    }
+
+    @PutMapping
+    public void updateTest(@RequestBody int id) {
     }
 }
