@@ -14,8 +14,9 @@ public class LittleDuduController {
     private LittleDuduLogic littleDuduLogic;
 
     @PostMapping
-    public void createLittleDudu(@RequestBody LittleDudu littleDudu) {
-       littleDuduLogic.createLittleDudu(littleDudu);
+    public long createLittleDudu(@RequestBody LittleDudu littleDudu) {
+       long id = littleDuduLogic.createLittleDudu(littleDudu);
+       return id;
     }
 
     @PutMapping

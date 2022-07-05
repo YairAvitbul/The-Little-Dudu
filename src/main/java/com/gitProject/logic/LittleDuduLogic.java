@@ -14,9 +14,10 @@ public class LittleDuduLogic {
     @Autowired
     private ILittleDuduRepository littleDuduRepository;
 
-    public void createLittleDudu(LittleDudu littleDudu) {
+    public long createLittleDudu(LittleDudu littleDudu) {
         LittleDuduEntity littleDuduEntity = new LittleDuduEntity(littleDudu);
         littleDuduRepository.save(littleDuduEntity);
+        return littleDuduEntity.getId();
     }
 
     public void updateLittleDudu(LittleDudu littleDudu) {
