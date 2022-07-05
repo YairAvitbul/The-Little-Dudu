@@ -20,4 +20,9 @@ public class TestController {
     @PutMapping
     public void updateTest(@RequestBody int id) {
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteTest(@PathVariable("id") long id) {
+        testRepository.deleteById(id);
+    }
 }
