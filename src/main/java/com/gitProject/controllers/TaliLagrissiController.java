@@ -2,7 +2,6 @@ package com.gitProject.controllers;
 
 import com.gitProject.dto.TaliLagrissi;
 import com.gitProject.logic.TaliLagrissiLogic;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
