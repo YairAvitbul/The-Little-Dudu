@@ -2,6 +2,7 @@ package com.tali.controllers;
 
 import com.tali.entities.TestEntity;
 import com.tali.repositories.ITestRepository;
+import org.aspectj.weaver.ast.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,8 @@ public class TestController {
     }
 
     @PutMapping
-    public void updateTest(@RequestBody int id) {
+    public void updateTest(@RequestBody TestEntity testEntity) {
+        testRepository.save(testEntity);
     }
 
     @DeleteMapping("/{id}")
