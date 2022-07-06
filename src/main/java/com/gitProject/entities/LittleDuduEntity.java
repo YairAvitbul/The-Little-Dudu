@@ -5,7 +5,7 @@ import com.gitProject.dto.LittleDudu;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "littleDudu")
+@Table(name = "littleDudus")
 public class LittleDuduEntity {
 
     @Id
